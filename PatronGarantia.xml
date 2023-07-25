@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2cc87f96-f2e7-4980-8b98-2eff17d8559b" activeEnvironment="Default" name="Pedidos" resourceRoot="" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="edbbccef-0a52-41a8-a975-4448bbced76f" wsaVersion="NONE" name="RequestAccesProxySoap12Binding" type="wsdl" bindingName="{http://ws.apache.org/axis2}RequestAccesProxySoap12Binding" soapVersion="1_2" anonymous="optional" definition="http://toshiba:8280/services/RequestAccesProxy?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://TOSHIBA:8280/services/RequestAccesProxy.RequestAccesProxyHttpSoap12Endpoint</con:endpoint><con:endpoint>https://TOSHIBA:8243/services/RequestAccesProxy.RequestAccesProxyHttpsSoap12Endpoint</con:endpoint></con:endpoints><con:operation id="47519251-c406-440e-b0f2-21ba2ff34fb1" isOneWay="false" action="urn:mediate" name="mediate" bindingOperationName="mediate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f9919763-71ac-4e5e-ab80-e802a1ecdaa7" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://TOSHIBA:8280/services/RequestAccesProxy.RequestAccesProxyHttpSoap12Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header/>
+   <soapenv:Body>
+   	<agregarCustomer>
+   		<customer_id>1</customer_id>
+   		<detalle>PruebaSOAP</detalle>
+   	</agregarCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:mediate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="f936e1b1-496a-45d3-b007-8324ee2db0a2" wsaVersion="NONE" name="RequestAccesProxySoap11Binding" type="wsdl" bindingName="{http://ws.apache.org/axis2}RequestAccesProxySoap11Binding" soapVersion="1_1" anonymous="optional" definition="http://toshiba:8280/services/RequestAccesProxy?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://toshiba:8280/services/RequestAccesProxy?wsdl"><con:part><con:url>http://toshiba:8280/services/RequestAccesProxy?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ws.apache.org/axis2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.apache.org/axis2" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types/>
+  <wsdl:message name="in"/>
+  <wsdl:message name="out"/>
+  <wsdl:portType name="RequestAccesProxyPortType">
+    <wsdl:operation name="mediate">
+      <wsdl:input message="tns:in" wsaw:Action="urn:mediate"/>
+      <wsdl:output message="tns:out" wsaw:Action="urn:mediateResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RequestAccesProxySoap11Binding" type="tns:RequestAccesProxyPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="mediate">
+      <soap:operation soapAction="urn:mediate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RequestAccesProxySoap12Binding" type="tns:RequestAccesProxyPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="mediate">
+      <soap12:operation soapAction="urn:mediate" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RequestAccesProxyHttpBinding" type="tns:RequestAccesProxyPortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="mediate">
+      <http:operation location="mediate"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RequestAccesProxy">
+    <wsdl:port name="RequestAccesProxyHttpSoap11Endpoint" binding="tns:RequestAccesProxySoap11Binding">
+      <soap:address location="http://TOSHIBA:8280/services/RequestAccesProxy.RequestAccesProxyHttpSoap11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="RequestAccesProxyHttpsSoap11Endpoint" binding="tns:RequestAccesProxySoap11Binding">
+      <soap:address location="https://TOSHIBA:8243/services/RequestAccesProxy.RequestAccesProxyHttpsSoap11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="RequestAccesProxyHttpsSoap12Endpoint" binding="tns:RequestAccesProxySoap12Binding">
+      <soap12:address location="https://TOSHIBA:8243/services/RequestAccesProxy.RequestAccesProxyHttpsSoap12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="RequestAccesProxyHttpSoap12Endpoint" binding="tns:RequestAccesProxySoap12Binding">
+      <soap12:address location="http://TOSHIBA:8280/services/RequestAccesProxy.RequestAccesProxyHttpSoap12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="RequestAccesProxyHttpEndpoint" binding="tns:RequestAccesProxyHttpBinding">
+      <http:address location="http://TOSHIBA:8280/services/RequestAccesProxy.RequestAccesProxyHttpEndpoint"/>
+    </wsdl:port>
+    <wsdl:port name="RequestAccesProxyHttpsEndpoint" binding="tns:RequestAccesProxyHttpBinding">
+      <http:address location="https://TOSHIBA:8243/services/RequestAccesProxy.RequestAccesProxyHttpsEndpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://TOSHIBA:8280/services/RequestAccesProxy.RequestAccesProxyHttpSoap11Endpoint</con:endpoint><con:endpoint>https://TOSHIBA:8243/services/RequestAccesProxy.RequestAccesProxyHttpsSoap11Endpoint</con:endpoint></con:endpoints><con:operation id="c0690d0e-e22a-4a1c-b3c1-9e2940587833" isOneWay="false" action="urn:mediate" name="mediate" bindingOperationName="mediate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a255b8f2-8de9-4a89-9ebe-c301d60c7dbb" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8280/services/RequestAccesProxy.RequestAccesProxyHttpSoap11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>
+   	<agregarRequest>
+   		<customer_id>2</customer_id>
+   		<detalle>Pedido KFC</detalle>
+   	</agregarRequest>
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:mediate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

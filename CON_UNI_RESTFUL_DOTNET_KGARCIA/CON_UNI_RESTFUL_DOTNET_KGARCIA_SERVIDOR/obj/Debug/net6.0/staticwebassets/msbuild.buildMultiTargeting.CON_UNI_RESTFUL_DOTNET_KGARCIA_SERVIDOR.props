@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CON_UNI_RESTFUL_DOTNET_KGARCIA_SERVIDOR.props" />
+</Project>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ljDjYcPKx7NTD0A/IOJ8/TcpPgCPnM1xR5+USZXWCudw11kxE3L7EXzHMvmrLJKdclAIkrqlH4KQj9GSLi/mpg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\garci\\source\\repos\\Integracion\\BASE_DATOS_RESTFUL_DOTNET_KGARCIA\\BASE_DATOS_RESTFUL_DOTNET_JACOME_LOAIZA_GARCIA_CLIENTE\\BASE_DATOS_RESTFUL_DOTNET_JACOME_LOAIZA_GARCIA_CLIENTE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\garci\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
